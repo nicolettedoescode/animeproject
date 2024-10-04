@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime-Themed Cute Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Basic styles for positioning the images */
+        .anime-girl {
+            position: absolute;
+            width: 400px; /* Increased width for larger images */
+            height: auto; /* Maintain aspect ratio */
+            bottom: 0; /* Position images at the bottom */
+            z-index: 2; /* Bring images to the forefront */
+        }
+
+        .left {
+            left: 0; /* Align to the left */
+        }
+
+        .right {
+            right: 0; /* Align to the right */
+        }
+
+        /* Mood Selector Styles */
+        .mood-selector {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        /* General Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            color: #5b5f97;
+            transition: background 0.5s ease; /* Smooth transition */
+        }
+
+        /* Mood Colors */
+        body.default {
+            background: linear-gradient(to top, #ffccf9, #f7b2bd);
+        }
+
+        body.happy {
+            background: linear-gradient(to top, #ffecb3, #ffcc80); /* Happy colors */
+        }
+
+        body.sad {
+            background: linear-gradient(to top, #b2ebf2, #80deea); /* Sad colors */
+        }
+
+        body.dark {
+            background: linear-gradient(to top, #424242, #616161); /* Dark colors */
+        }
+
+        body.light {
+            background: linear-gradient(to top, #ffffff, #f5f5f5); /* Light colors */
+        }
+
+        /* Mood Message Styles */
+        #mood-message {
+            font-size: 1.2em;
+            text-align: center;
+            margin-top: 10px;
+            transition: color 0.5s ease; /* Smooth color transition */
+        }
+    </style>
+</head>
+<body class="default"> <!-- Default class for initial mood -->
+    <div class="sky">
+        <div class="cloud"></div>
+        <div class="cloud small"></div>
+    </div>
+
+    <header>
+        <h1 class="anime-title">Kawaii World!</h1>
+        <div class="mood-selector">
+            <label for="mood">Choose your mood:</label>
+            <select id="mood" onchange="changeMood()">
+                <option value="default">Default</option>
+                <option value="happy">Happy</option>
+                <option value="sad">Sad</option>
+                <option value="dark">Dark</option>
+                <option value="light">Light</option>
+            </select>
+        </div>
+        <div id="mood-message">Welcome to Kawaii World! Choose a mood to start!</div> <!-- Mood message -->
+    </header>
+
+    <section class="content">
+        <div class="card">
+            <h2>Hello, Friend!</h2>
+            <p>Explore the magic of cute, pastel colors and playful animation.</p>
+            <button class="btn" onclick="location.href='about.html'">About Us</button>
+            <button class="btn" onclick="location.href='gallery.html'">Gallery</button>
+            <button class="btn" onclick="location.href='contact.html'">Contact</button>
+        </div>
+
+        <!-- Images of cute anime girls positioned at either end -->
+        <img src="images/animegirl1" alt="Cute Anime Girl 1" class="anime-girl right">
+        <img src="images/animegirl2" alt="Cute Anime Girl 2" class="anime-girl left">
+    </section>
+
+    <footer>
+        <p>Anime Vibes © 2024</p>
+    </footer>
+
+    <script>
+        function changeMood() {
+            const moodSelector = document.getElementById('mood');
+            const mood = moodSelector.value;
+            document.body.className = mood; // Change the body's class based on the mood selected
+
+            // Change the mood message based on selection
+            const moodMessage = document.getElementById('mood-message');
+            switch (mood) {
+                case 'happy':
+                    moodMessage.textContent = "Yay! Let's spread some happiness! 🌈";
+                    break;
+                case 'sad':
+                    moodMessage.textContent = "It's okay to feel sad. Take a moment to relax. 🌧️";
+                    break;
+                case 'dark':
+                    moodMessage.textContent = "Embrace the darkness, but don't forget the light! 🌑";
+                    break;
+                case 'light':
+                    moodMessage.textContent = "Let's brighten things up! ☀️";
+                    break;
+                default:
+                    moodMessage.textContent = "Welcome to Kawaii World! Choose a mood to start!";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,236 @@
+/* General Styles */
+body {
+   margin: 0;
+   padding: 0;
+   background: linear-gradient(to top, #ffccf9, #f7b2bd);
+   font-family: 'Poppins', sans-serif;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   min-height: 100vh;
+   color: #5b5f97;
+   position: relative;
+   overflow: hidden; /* Prevents overflow from clouds */
+}
+
+.clouds {
+   position: absolute;
+   top: 0;
+   left: 0;
+   right: 0;
+   height: 100%;
+   overflow: hidden; /* Hide clouds that move outside the viewport */
+   z-index: 0; /* Place clouds behind other elements */
+}
+
+/* Cloud Styles */
+.cloud {
+   position: absolute;
+   background: #ffffff; /* Solid white for clouds */
+   border-radius: 50%; /* Rounded shape for fluffiness */
+   opacity: 1; /* Full opacity for a solid look */
+   box-shadow: 0 0 10px rgba(255, 255, 255, 0.7); /* Softer shadow */
+   animation: float 25s linear infinite; /* Floating animation */
+}
+
+/* Smaller cloud sizes and cute fluffy shapes */
+.cloud:nth-child(1) {
+   width: 70px; /* Smaller width */
+   height: 40px; /* Smaller height */
+   top: 20px;
+   left: -100px;
+   animation-duration: 18s; /* Slower animation */
+   border-radius: 50% 50% 40% 40%; /* Fluffy shape */
+}
+
+.cloud:nth-child(2) {
+   width: 80px; /* Smaller width */
+   height: 50px; /* Smaller height */
+   top: 80px;
+   left: -150px;
+   animation-duration: 22s; /* Slower animation */
+   border-radius: 60% 60% 40% 40%; /* Fluffy shape */
+}
+
+.cloud:nth-child(3) {
+   width: 60px; /* Smaller width */
+   height: 35px; /* Smaller height */
+   top: 150px;
+   left: -80px;
+   animation-duration: 20s; /* Slower animation */
+   border-radius: 50% 60% 50% 50%; /* Fluffy shape */
+}
+
+.cloud:nth-child(4) {
+   width: 90px; /* Smaller width */
+   height: 55px; /* Smaller height */
+   top: 200px;
+   left: -120px;
+   animation-duration: 24s; /* Slower animation */
+   border-radius: 60% 50% 40% 50%; /* Fluffy shape */
+}
+
+
+@keyframes float {
+   0% {
+       transform: translateX(0);
+   }
+   100% {
+       transform: translateX(100vw);
+   }
+}
+
+header {
+   width: 100%;
+   padding: 20px;
+   background-color: rgba(255, 228, 225, 0.9);
+   text-align: center;
+   position: relative; /* Allows layering of elements */
+   z-index: 1; /* Brings header above clouds */
+}
+
+.anime-title {
+   font-size: 3em;
+   color: #ff9aa2;
+   text-shadow: 2px 2px 0 #fff, 4px 4px 0 #ffc3a0;
+   margin: 0;
+}
+
+nav ul {
+   list-style: none;
+   padding: 0;
+}
+
+nav ul li {
+   display: inline;
+   margin: 0 15px;
+}
+
+nav ul li a {
+   color: #ff9aa2;
+   font-weight: bold;
+   text-decoration: none;
+}
+
+nav ul li a:hover {
+   color: #ffb7b2;
+}
+
+/* Card style */
+.card {
+   background-color: #ffffff; /* Soft white background */
+   padding: 20px;
+   border-radius: 20px; /* Round edges for a soft look */
+   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow */
+   max-width: 400px;
+   text-align: center;
+   margin: 20px;
+   position: relative; /* Keeps card above clouds */
+   z-index: 1;
+}
+
+/* Button style */
+.btn {
+   background-color: #ff9aa2; /* Soft pink button */
+   color: white;
+   padding: 10px 20px;
+   border-radius: 10px; /* Rounded corners */
+   border: none;
+   cursor: pointer;
+   transition: all 0.3s ease;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+}
+
+.btn:hover {
+   background-color: #ffb7b2; /* Lighter pink on hover */
+   transform: scale(1.05);
+   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Deeper shadow on hover */
+}
+
+/* Gallery grid */
+.gallery-grid {
+   display: grid;
+   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+   gap: 10px;
+   margin-top: 20px;
+}
+
+.gallery-grid img {
+   width: 100%;
+   border-radius: 10px; /* Soft corners for images */
+}
+
+/* Contact form */
+.contact-form {
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+   margin-top: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+   padding: 10px;
+   border-radius: 10px; /* Rounded corners */
+   border: 1px solid #ffb7b2; /* Soft border */
+   font-size: 1em;
+}
+
+.contact-form button {
+   align-self: flex-start;
+}
+
+footer {
+   padding: 10px;
+   width: 100%;
+   background-color: rgba(255, 182, 193, 0.9); /* Soft footer background */
+   text-align: center;
+   position: relative; /* Keeps footer above clouds */
+   z-index: 1;
+}
+/* Mood Selector Button Styles */
+.mood-selector {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.mood-selector label {
+    font-size: 1.2em; /* Smaller font for a more delicate look */
+    color: #ff69b4; /* Bright pink color for a fun aesthetic */
+    text-shadow: 1px 1px 2px rgba(255, 105, 180, 0.6); /* Soft pink shadow */
+    margin-right: 8px; /* Space between label and select */
+}
+
+.mood-selector select {
+    font-family: 'Comic Sans MS', cursive, sans-serif; /* Cute font for a playful vibe */
+    font-size: 1em; /* Smaller text size */
+    padding: 10px; /* Reduced padding for a compact look */
+    border: 2px solid #ff69b4; /* Bright pink border */
+    border-radius: 8px; /* More rounded corners for a cute appearance */
+    background: linear-gradient(145deg, #ffe6f2, #ffb3d9); /* Gradient background */
+    color: #333; /* Dark text color */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: all 0.3s ease; /* Smooth transition effects */
+    box-shadow: 4px 4px 10px rgba(255, 105, 180, 0.5); /* Cute shadow effect */
+}
+
+/* Change border color and background on hover */
+.mood-selector select:hover {
+    border-color: #ff1493; /* Darker pink on hover */
+    background: linear-gradient(145deg, #ffb3d9, #ff69b4); /* Brighter gradient on hover */
+    transform: scale(1.05); /* Slight scale up for effect */
+}
+
+/* Option styles */
+.mood-selector select option {
+    background-color: #ffe6f2; /* Light pink background for options */
+    color: #333; /* Dark text color */
+    padding: 5px; /* Padding for options */
+}
+
+/* Extra styling for option hover */
+.mood-selector select option:hover {
+    background-color: #ffb3d9; /* Brighter pink on hover */
+    color: #fff; /* White text on hover */
+}
